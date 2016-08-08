@@ -1,0 +1,11 @@
+language: node_js
+node_js: 
+ - '4.4'
+scripts: 
+  - npm run tests
+deploy: 
+  provider: heroku
+  app: infrastructure-task
+  on: master
+  api_key:
+    secure: 51c32a78-6bf1-4c66-bb98-679924c6e047
