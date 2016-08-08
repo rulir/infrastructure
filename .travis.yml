@@ -2,7 +2,7 @@ language: node_js
 node_js: 
  - '4.4'
 scripts: 
-  - npm run tests
+  - npm run test
 deploy: 
   provider: heroku
   app: infrastructure-task
