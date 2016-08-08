@@ -15,7 +15,6 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join('public')));
 
 app.get('/', function(req, res) {
-	let id = req.params.id;
 	console.time('render')
 	res.render('index', {title: 'Infrastructure Task', message: 'Hello from the otherside!'});
 	console.timeEnd('render')
@@ -23,9 +22,9 @@ app.get('/', function(req, res) {
 
 // for catch 404-error and forward to error handler
 app.use(function(req, res, next) {
-  let err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+	let err = new Error('Not Found');
+	err.status = 404;
+	next(err);
 });
 
 //starting server on port 3000
