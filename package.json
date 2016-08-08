@@ -4,7 +4,8 @@
   "description": "shri 2016 task",
   "main": "server.js",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   },
   "devDependencies": {
     "eslint": "^3.2.2"
+  },
+  "engines": {
+    "node": "4.4.7"
   }
 }
