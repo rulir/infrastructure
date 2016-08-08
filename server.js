@@ -37,13 +37,13 @@ app.get('/replaced-string', function(req, res) {
 
 function alphabetPosition(text) {
 	let positions = [];
-	text.toLowerCase().split('').forEach(function(val, i, arr) {
+	text.toLowerCase().split('').forEach(function(val, i) {
 		if (val.charCodeAt() > 1071 && val.charCodeAt() < 1104) {
 			positions.push(val.charCodeAt() - 1071);
-		};
+		}
 	});
 	return positions.join(' ');
-};
+}
 
 // for catch 404-error and forward to error handler
 app.use(function(req, res, next) {
