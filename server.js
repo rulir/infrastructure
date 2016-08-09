@@ -26,6 +26,15 @@ app.get('/', function(req, res) {
 	console.timeEnd('render'); // eslint-disable-line no-console
 });
 
+//favicon request interceptor
+app.get('/favicon.ico', function(req, res) {
+	console.log('favicon req');
+	res.setHeader('Content-Type', 'image/x-icon');
+	res.status('200').send('OK');
+	res.end();
+});
+
+
 app.get('/replaced-string', function(req, res) {
 	let inputString = req.query.sourceString;
 	let outputString = alphabetPosition(inputString);
