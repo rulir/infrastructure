@@ -6,8 +6,8 @@ module.exports = {
 		"node": true
 	},
 	"rules": {
-		"no-console": 0,
-		"semi": [1, "never"],
+		"semi": ["error", "always"],
+		"no-console": 1,
 		"quotes": ["error", "single"],
 		"indent": ["error", "tab"],
 	}
