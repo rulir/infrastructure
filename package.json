@@ -4,7 +4,9 @@
   "description": "shri 2016 task",
   "main": "server.js",
   "scripts": {
-    "test": "eslint .",
+    "test": "npm run eslint && npm run mocha",
+    "eslint": "eslint .",
+    "mocha": "mocha tests/alphabet-position.js",
     "start": "node server.js"
   },
   "repository": {
@@ -22,7 +24,9 @@
     "pug": "^2.0.0-beta4"
   },
   "devDependencies": {
-    "eslint": "^3.2.2"
+    "chai": "^3.5.0",
+    "eslint": "^3.2.2",
+    "mocha": "^3.0.2"
   },
   "engines": {
     "node": "4.4.7"
