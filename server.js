@@ -3,6 +3,9 @@
 let express = require('express');
 let path = require('path');
 
+//func for calculate position in alphabet
+let alphabetPosition = require('./resources/alphabet-position');
+
 //new express app
 let app = express();
 
@@ -34,16 +37,6 @@ app.get('/replaced-string', function(req, res) {
 	});
 	console.timeEnd('render'); // eslint-disable-line no-console
 });
-
-function alphabetPosition(text) {
-	let positions = [];
-	text.toLowerCase().split('').forEach(function(val) {
-		if (val.charCodeAt() > 1071 && val.charCodeAt() < 1104) {
-			positions.push(val.charCodeAt() - 1071);
-		}
-	});
-	return positions.join(' ');
-}
 
 // for catch 404-error and forward to error handler
 app.use(function(req, res, next) {
