@@ -15,24 +15,24 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join('public')));
 
 app.get('/', function(req, res) {
-	console.time('render');
+	console.time('render'); // eslint-disable-line no-console
 	res.render('index', {
 		title: 'Infrastructure Task',
 		message: 'Введите любой текст на русском языке'
 	});
-	console.timeEnd('render');
+	console.timeEnd('render'); // eslint-disable-line no-console
 });
 
 app.get('/replaced-string', function(req, res) {
 	let inputString = req.query.sourceString;
-	console.log(inputString);
 	let outputString = alphabetPosition(inputString);
-	console.log(outputString);
+	console.time('render'); // eslint-disable-line no-console
 	res.render('replaced-string', {
 		title: 'Infrastructure Task',
 		message: 'Каждая цифра соответствует позиции буквы в русском алфавите',
 		resultString: outputString
 	});
+	console.timeEnd('render'); // eslint-disable-line no-console
 });
 
 function alphabetPosition(text) {
@@ -54,5 +54,5 @@ app.use(function(req, res, next) {
 
 //starting server on port 3000
 app.listen(app.get('port'), function() {
-	console.log('server running on port ', app.get('port'));
+	console.log('server running on port ', app.get('port')); // eslint-disable-line no-console
 });
