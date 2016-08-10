@@ -14,7 +14,8 @@
   },
   "pre-commit": [
     "csscomb",
-    "test"
+    "lint",
+    "mocha"
   ],
   "repository": {
     "type": "git",
