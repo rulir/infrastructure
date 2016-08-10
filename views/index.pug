@@ -4,7 +4,7 @@ html(lang="ru")
 		title= title
 		link(rel='stylesheet' href="styles.css")
 	body
-		h1= message
+		h3.header= message
 		form.form(action='/replaced-string', method='GET')
 			input.form__input(type='text', name='sourceString', value='Моя фраза')
 			input.form__button(type='submit', value='Заменить')
