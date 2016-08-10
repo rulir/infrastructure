@@ -1,9 +1,13 @@
 'use strict';
 
 let chai = require('chai');
+let expect = chai.expect;
+
 let alphabetPosition = require('../resources/alphabet-position');
 
-let expect = chai.expect;
+let describe = require('mocha').describe;
+let it = require('mocha').it;
+
 
 describe('alphabet-position', function() {
 	it('should return a string', function() {
