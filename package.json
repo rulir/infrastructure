@@ -4,11 +4,18 @@
   "description": "shri 2016 task",
   "main": "server.js",
   "scripts": {
-    "test": "npm run eslint && npm run mocha",
-    "eslint": "eslint .",
+    "test": "npm run lint && npm run mocha",
+    "csscomb": "csscomb public/*.css",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint public/*.css",
     "mocha": "mocha tests/alphabet-position.js",
     "start": "node server.js"
   },
+  "pre-commit": [
+    "csscomb",
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rulir/infrastructure.git"
@@ -25,8 +32,13 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "csscomb": "^3.1.7",
     "eslint": "^3.2.2",
-    "mocha": "^3.0.2"
+    "mocha": "^3.0.2",
+    "npm-run-all": "^2.3.0",
+    "pre-commit": "^1.1.3",
+    "stylelint": "^7.1.0",
+    "stylelint-config-standard": "^12.0.0"
   },
   "engines": {
     "node": "4.4.7"
