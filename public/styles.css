@@ -1,0 +1,39 @@
+.header {
+	text-align: center;
+	color: #555;
+	font-family: Helvetica, Arial;
+}
+
+.form {
+	display: flex;
+	justify-content: center;
+}
+
+.form__input {
+	display: block;
+	box-sizing: border-box;
+	border: 1px solid #2196f3;
+	height: 35px;
+	font-size: 14px;
+	color: #333;
+	width: 300px;
+	padding: 0 10px;
+}
+
+.form__button {
+	display: block;
+	box-sizing: border-box;
+	border: 1px solid #2196f3;
+	height: 35px;
+	font-size: 14px;
+	border-left: none;
+	background: #2196f3;
+	color: #fff;
+	width: 100px;
+	cursor: pointer;
+	transition: background 0.15s;
+}
+
+.form__button:hover {
+	background: #1885dc;
+}
