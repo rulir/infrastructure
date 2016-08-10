@@ -1,13 +1,13 @@
 'use strict';
 
-let express = require('express');
-let path = require('path');
+const express = require('express');
+const path = require('path');
 
 //func for calculate position in alphabet
-let alphabetPosition = require('./resources/alphabet-position');
+const alphabetPosition = require('./resources/alphabet-position');
 
 //new express app
-let app = express();
+const app = express();
 
 app.set('port', process.env.PORT || 5000);
 
@@ -17,6 +17,7 @@ app.set('view engine', 'pug');
 //add static
 app.use(express.static(path.join('public')));
 
+//initial state
 app.get('/', function(req, res) {
 	console.time('render'); // eslint-disable-line no-console
 	res.render('index', {
@@ -34,7 +35,7 @@ app.get('/favicon.ico', function(req, res) {
 	res.end();
 });
 
-
+//result state
 app.get('/replaced-string', function(req, res) {
 	let inputString = req.query.sourceString;
 	let outputString = alphabetPosition(inputString);
@@ -54,7 +55,7 @@ app.use(function(req, res, next) {
 	next(err);
 });
 
-//starting server on port 3000
+//starting server
 app.listen(app.get('port'), function() {
 	console.log('server running on port ', app.get('port')); // eslint-disable-line no-console
 });
