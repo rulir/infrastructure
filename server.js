@@ -28,7 +28,7 @@ app.get('/', function(req, res) {
 
 //favicon request interceptor
 app.get('/favicon.ico', function(req, res) {
-	console.log('favicon req');
+	console.log('favicon req'); // eslint-disable-line no-console
 	res.setHeader('Content-Type', 'image/x-icon');
 	res.status('200').send('OK');
 	res.end();
